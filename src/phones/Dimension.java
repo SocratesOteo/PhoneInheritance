@@ -16,7 +16,7 @@ public class Dimension {
     public Dimension(double height, double width, double depth) {
         if (height <= 0 || width <= 0 || depth <= 0) {
             throw new IllegalArgumentException(
-                    "The height, width, depth of a dimension should be positive"
+                    "The height, width, and depth of a dimension needs to be positive."
             );
 
         }
@@ -60,7 +60,7 @@ public class Dimension {
     public String toString() {
         return String.format(
                 Locale.ROOT,
-                ("%.1f x %.1f x %.1f"),
+                ("(%.1f x %.1f x %.1f)"),
                 height, width, depth
         );
     }

@@ -8,16 +8,17 @@ import java.util.concurrent.ThreadLocalRandom;
  *
  * @author socrates
  */
-public class Smartphone extends Phone{
+public class smartPhone extends Phone{
     private int storage;
 
-    public Smartphone(String model, Dimension dimension, int storage) {
-        if (storage <= 0){
+    public smartPhone(String model, Dimension dimension, int storage) {
+        super(model, dimension);
+        if (storage <= 0 ){
             throw new
-                    IllegalArgumentException("Storage cannot be less than 0");
+                    IllegalArgumentException("Storage needs to be assigned a positive value");
+
         }
 
-        super(model, dimension);
         this.storage = storage;
     }
 
@@ -37,7 +38,7 @@ public class Smartphone extends Phone{
      */
     public String takePicture(){
         if (ThreadLocalRandom.current().nextBoolean()){
-            return "Taking horizontal a picture";
+            return "Taking a horizontal picture";
 
         }
         return "Taking a vertical picture";
@@ -45,6 +46,6 @@ public class Smartphone extends Phone{
 
     @Override
     public String toString() {
-        return super.toString() + " " + storage + " GB" ;
+        return super.toString() + " " + storage + "GB" ;
     }
 }

@@ -20,9 +20,7 @@ public abstract class Phone {
      * @param number phone number
      * @return A string that say the {number} is being called
      */
-    public String call(long number){
-        return "Calling " + number + " by selecting the number";
-    };
+    public abstract String call(long number);
 
     /**
      * Returns a string with the format
